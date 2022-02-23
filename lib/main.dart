@@ -26,18 +26,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: d_blue,
-      appBar: MyAppBar(),
-      body:  SingleChildScrollView(child: Column(
-        children: [  //car on va avoir plusieurs widget à l'intérieur 
-          Container(height: 300, 
-          color: Colors.blue,),
-           Container(height: 1500, 
-          color: Colors.red,)
-
-        ],
-      ),)
-    );
+        backgroundColor: d_blue,
+        appBar: MyAppBar(),
+        body: SingleChildScrollView(
+          child: //SingleChildScrollView permet d'empecher l'erreur d'overflow et donc de scroller
+              Column(
+            children: [
+              //car on va avoir plusieurs widget à l'intérieur
+             chercheSection(),
+              Container(
+                height: 1500,
+                color: Colors.red,
+              )
+            ],
+          ),
+        ));
   }
 }
 
@@ -58,29 +61,42 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           onPressed: null,
         ),
-        title: Text(explore, 
-        style: GoogleFonts.kanit(
-           color: d_lightblue,
-           fontSize: 22,
-           fontWeight: FontWeight.w500
+        title: Text(
+          explore,
+          style: GoogleFonts.kanit(
+              color: d_lightblue, fontSize: 22, fontWeight: FontWeight.w500),
         ),
-        ),
-        actions: [IconButton(
-          icon: Icon(
-            Icons.favorite_outline_rounded,
-            color: d_lightblue,
-            size: 20,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.favorite_outline_rounded,
+              color: d_lightblue,
+              size: 20,
+            ),
+            onPressed: null,
           ),
-          onPressed: null,
-        ),IconButton(
-          icon: Icon(
-            Icons.place,
-            color: d_lightblue,
-            size: 20,
+          IconButton(
+            icon: Icon(
+              Icons.place,
+              color: d_lightblue,
+              size: 20,
+            ),
+            onPressed: null,
           ),
-          onPressed: null,
-        ),],
+        ],
         centerTitle: true,
         backgroundColor: Color(0xFFfcec0c));
+  }
+}
+
+//je vais déclarer séparement les deux sections
+
+class chercheSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      color: d_lightblue,
+    );
   }
 }
