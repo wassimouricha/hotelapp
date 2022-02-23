@@ -99,7 +99,7 @@ class chercheSection extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: Column(
         children: [
-          Row(children: [
+          Row(children: [ //dans mon row il y a le widget textfield et le widget elevatedbutton
             Expanded( //widget responsive qui s'adapte au autres widget
               child: 
               Container( 
@@ -131,17 +131,43 @@ class chercheSection extends StatelessWidget {
                     ),
                   ],
                   borderRadius: BorderRadius.all(Radius.circular(25)),
-                color:d_redus,),
+                ),
                 child: ElevatedButton(
-                  onPressed: null, 
-                    child: Icon(Icons.search), 
+                  onPressed: (){}, 
+                    child: Icon(Icons.search, size: 26,), 
                       style: ElevatedButton.styleFrom(
                          shape: CircleBorder(),
+                         padding: EdgeInsets.all(10),
+                         primary: d_redus,
                 ),),
               ),
           ],),
-          SizedBox(height: 50),
-          Container(height: 50, color:Colors.red),
+          SizedBox(height: 10), //pour espacer les widgets
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                margin:EdgeInsets.all(10),
+                child: Column(
+                  children:[
+                  Text("Choisir la date"),
+                  Text("22 dec - 28 dec")
+                  ]
+                  
+                ),
+              ),
+               Container(
+                margin:EdgeInsets.all(10),
+                child: Column(
+                  children:[
+                  Text("Nombre de chambres"),
+                  Text("1 adulte - 2 adultes")
+                  ]
+                  
+                ),
+              )
+            ],
+          ),
         ],),
     );
   }
