@@ -216,42 +216,37 @@ class chercheSection extends StatelessWidget {
 class hotelSection extends StatelessWidget {
   final List hotelList = [
     {
-      "titre" : "Konpeki Plaza",
+      "titre": "Konpeki Plaza",
       "Localisation": "Corpo Plaza, Night City",
-      "distance" : 2,
-      "review" : 522,
-      "photo" : "assets/hotel2.jpeg",
-      "prix" : "800"
-
+      "distance": 2,
+      "review": 522,
+      "photo": "assets/hotel2.jpeg",
+      "prix": "800"
     },
-     {
-      "titre" : "Hoteru",
+    {
+      "titre": "Hoteru",
       "Localisation": "Watson, Night City",
-      "distance" : 1,
-      "review" : 42,
-      "photo" : "assets/hotel1.jpg",
-      "prix" : "15"
-
+      "distance": 1,
+      "review": 42,
+      "photo": "assets/hotel1.jpg",
+      "prix": "15"
     },
-     {
-      "titre" : "Biotechnica Hotel",
+    {
+      "titre": "Biotechnica Hotel",
       "Localisation": "JapanTown, Night City",
-      "distance" : 4,
-      "review" : 622,
-      "photo" : "assets/hotel3.jpg",
-      "prix" : "650"
-
+      "distance": 4,
+      "review": 622,
+      "photo": "assets/hotel3.jpg",
+      "prix": "650"
     },
-     {
-      "titre" : "No Tell Motel",
+    {
+      "titre": "No Tell Motel",
       "Localisation": "Pacifica, Night City",
-      "distance" : 6,
-      "review" : 122,
-      "photo" : "assets/hotel4.jpg",
-      "prix" : "60"
-
+      "distance": 6,
+      "review": 122,
+      "photo": "assets/hotel4.jpg",
+      "prix": "60"
     }
-
   ];
 
   @override
@@ -295,14 +290,32 @@ class hotelSection extends StatelessWidget {
               ],
             ),
           ),
-         Column(
-           children: hotelList.map((hotel){ //j'appelle le contenu du tableau de ma variable hotelist
-             return Container(
-               child:Text(hotel["titre"]),
-             );
-           }).toList(),
-         )
+          Column(
+            children: hotelList.map((hotel) {
+              //j'appelle le contenu du tableau de ma variable hotelist, on parcours la liste avec map et en dessous on renvoie le widget hotelCard
+              return hotelCard(hotel);
+            }).toList(),
+          )
         ],
+      ),
+    );
+  }
+}
+
+//ici je vais creer le widget des cartes
+
+class hotelCard extends StatelessWidget {
+  final Map hotelData;
+  hotelCard(this.hotelData);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      height: 230,
+      decoration:BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.all(Radius.circular(18)),
+
       ),
     );
   }
