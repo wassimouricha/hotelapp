@@ -37,6 +37,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(50);
 
   String titreDeApp = "NC Hotel Booking";
+  String explore = "Explorer";
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,29 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           onPressed: null,
         ),
-        title: Text(titreDeApp),
+        title: Text(explore, 
+        style: GoogleFonts.kanit(
+           color: d_lightblue,
+           fontSize: 22,
+           fontWeight: FontWeight.w500
+        ),
+        ),
+        actions: [IconButton(
+          icon: Icon(
+            Icons.favorite_outline_rounded,
+            color: d_lightblue,
+            size: 20,
+          ),
+          onPressed: null,
+        ),IconButton(
+          icon: Icon(
+            Icons.place,
+            color: d_lightblue,
+            size: 20,
+          ),
+          onPressed: null,
+        ),],
+        centerTitle: true,
         backgroundColor: Color(0xFFfcec0c));
   }
 }
