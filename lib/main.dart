@@ -28,7 +28,15 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: d_blue,
       appBar: MyAppBar(),
-      body: Container(),
+      body:  SingleChildScrollView(child: Column(
+        children: [  //car on va avoir plusieurs widget à l'intérieur 
+          Container(height: 300, 
+          color: Colors.blue,),
+           Container(height: 1500, 
+          color: Colors.red,)
+
+        ],
+      ),)
     );
   }
 }
