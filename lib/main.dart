@@ -34,10 +34,8 @@ class HomePage extends StatelessWidget {
             children: [
               //car on va avoir plusieurs widget à l'intérieur
              chercheSection(),
-              Container(
-                height: 1500,
-                color: Colors.red,
-              )
+             hotelSection(),
+             
             ],
           ),
         ));
@@ -90,7 +88,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 //je vais déclarer séparement les deux sections
-
+//section recherche
 class chercheSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -100,3 +98,14 @@ class chercheSection extends StatelessWidget {
     );
   }
 }
+//section hotel
+class hotelSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 1500,
+      color: Colors.red,
+    );
+  }
+}
+
