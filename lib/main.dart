@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const d_blue = Color(0xFF136377);
-const d_lightblue = Color(0xFF00b8ff);
+const d_lightblue = Color(0xFF25E1ED);
+const d_redus = Color(0xFFFF4A57);
 
 void main() {
   runApp(MonApp());
@@ -95,6 +96,53 @@ class chercheSection extends StatelessWidget {
     return Container(
       height: 200,
       color: d_lightblue,
+      padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
+      child: Column(
+        children: [
+          Row(children: [
+            Expanded( //widget responsive qui s'adapte au autres widget
+              child: 
+              Container( 
+                padding: EdgeInsets.only(left: 5),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 4,
+                      offset: Offset(0,3),
+                    ),
+                  ]),
+                child: TextField(
+                  decoration: InputDecoration(hintText: "Visitez les différents hotels de night city", contentPadding: EdgeInsets.all(10),
+                  border: InputBorder.none),
+                ),),), //ici c'est mon champ de texte
+                SizedBox(width: 10,),
+            Container(
+              height: 50, 
+              width: 50,
+              decoration: BoxDecoration(
+                boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 4,
+                      offset: Offset(0,4),
+                    ),
+                  ],
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                color:d_redus,),
+                child: ElevatedButton(
+                  onPressed: null, 
+                    child: Icon(Icons.search), 
+                      style: ElevatedButton.styleFrom(
+                         shape: CircleBorder(),
+                ),),
+              ),
+          ],),
+          SizedBox(height: 50),
+          Container(height: 50, color:Colors.red),
+        ],),
     );
   }
 }
@@ -103,8 +151,8 @@ class hotelSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1500,
-      color: Colors.red,
+      height: 2000,
+      color: Colors.lightBlue
     );
   }
 }
