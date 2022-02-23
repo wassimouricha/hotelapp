@@ -1,6 +1,6 @@
 # hotelapp
 
-A new Flutter project.
+My second flutter applications , A Hotel booking front
 
 ## Getting Started
 

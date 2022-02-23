@@ -315,7 +315,7 @@ class hotelCard extends StatelessWidget {
         height: 230,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.yellow,
+          color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(18)),
           boxShadow: [
             BoxShadow(
@@ -359,7 +359,14 @@ class hotelCard extends StatelessWidget {
                       ))
                 ],
               ),
-            )
+            ),
+            Container(
+              child: Row(
+                children: [
+                  Text(hotelData['titre']),
+                ],
+              ),
+            ),
           ],
         ));
   }
