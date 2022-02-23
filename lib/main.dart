@@ -95,7 +95,7 @@ class chercheSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: d_lightblue,
+      color: Colors.grey[100],
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: Column(
         children: [
@@ -109,7 +109,7 @@ class chercheSection extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: Colors.grey.shade300,
                       blurRadius: 4,
                       offset: Offset(0,3),
                     ),
@@ -125,7 +125,7 @@ class chercheSection extends StatelessWidget {
               decoration: BoxDecoration(
                 boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
+                      color: Colors.grey.shade300,
                       blurRadius: 4,
                       offset: Offset(0,4),
                     ),
@@ -151,8 +151,17 @@ class chercheSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
-                  Text("Choisir la date"),
-                  Text("22 dec - 28 dec")
+                  Text("Choisir la date" , 
+                  style: GoogleFonts.nunito(
+                    color: d_redus,
+                    fontSize: 15,
+                  ),),
+                   SizedBox(height: 5),
+                  Text("22 dec - 28 dec",
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize: 17,
+                  ),)
                   ]
                   
                 ),
@@ -162,8 +171,17 @@ class chercheSection extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start, //permet l'alignement 
                   children:[
-                  Text("Nombre de chambres"),
-                  Text("1 adulte - 2 adultes")
+                  Text("Nombre de chambres",
+                  style: GoogleFonts.nunito(
+                    color: d_redus,
+                    fontSize: 15,
+                  ),),
+                  SizedBox(height: 5),
+                  Text("1 adulte - 2 adultes",
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize: 17,
+                  ),)
                   ]
                   
                 ),
@@ -179,8 +197,43 @@ class hotelSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 2000,
-      color: Colors.lightBlue
+      padding: EdgeInsets.all(10),
+      color: Colors.lightBlue,
+      child: Column(
+        children: [
+          Container(
+            color: Colors.red,
+            height: 50,
+            child: Row(
+                children: [
+                  Text("4 hotels trouvés", 
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize:15,
+                  ) ,),
+                  Row(
+                    children: [
+                      Text("Filtres", 
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize:15,
+                  ) ,),
+                  IconButton( 
+                  icon: Icon(
+                    Icons.filter_list_outlined,
+                  color: d_redus,size: 25,),
+                  onPressed: null,),
+                    ],
+                  )
+                ],
+            ),
+          ),
+            Container(
+            color: Colors.blue,
+            height: 1000,
+          )
+        ],
+      ),
     );
   }
 }
