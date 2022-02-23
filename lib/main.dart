@@ -253,7 +253,7 @@ class hotelSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      color: Colors.lightBlue,
+      color: Colors.grey[100],
       child: Column(
         children: [
           Container(
@@ -312,11 +312,31 @@ class hotelCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       height: 230,
+      width: double.infinity,
       decoration:BoxDecoration(
         color: Colors.yellow,
         borderRadius: BorderRadius.all(Radius.circular(18)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.shade200,
+            spreadRadius: 4,
+            blurRadius: 6,
+            offset: Offset(0,3),
+          )
+        ],
 
       ),
+      child: Column(children: [
+        Container(
+          height: 140,
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage(hotelData['photo'],
+            ),
+            fit: BoxFit.cover, //permet a l'image de prendre l'entiereté du container 
+            ),
+          ),
+        )
+      ],)
     );
   }
 }
