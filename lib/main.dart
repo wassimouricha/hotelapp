@@ -314,6 +314,7 @@ class hotelCard extends StatelessWidget {
       height: 230,
       width: double.infinity,
       decoration:BoxDecoration(
+
         color: Colors.yellow,
         borderRadius: BorderRadius.all(Radius.circular(18)),
         boxShadow: [
@@ -330,6 +331,10 @@ class hotelCard extends StatelessWidget {
         Container(
           height: 140,
           decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(18),
+              topRight: Radius.circular(18)
+            ),
             image: DecorationImage(image: AssetImage(hotelData['photo'],
             ),
             fit: BoxFit.cover, //permet a l'image de prendre l'entiereté du container 
