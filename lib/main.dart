@@ -144,11 +144,12 @@ class chercheSection extends StatelessWidget {
           ],),
           SizedBox(height: 10), //pour espacer les widgets
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween, //permet l'alignement 
             children: [
               Container(
                 margin:EdgeInsets.all(10),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
                   Text("Choisir la date"),
                   Text("22 dec - 28 dec")
@@ -159,6 +160,7 @@ class chercheSection extends StatelessWidget {
                Container(
                 margin:EdgeInsets.all(10),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, //permet l'alignement 
                   children:[
                   Text("Nombre de chambres"),
                   Text("1 adulte - 2 adultes")
