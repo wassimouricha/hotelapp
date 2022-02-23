@@ -34,9 +34,8 @@ class HomePage extends StatelessWidget {
               Column(
             children: [
               //car on va avoir plusieurs widget à l'intérieur
-             chercheSection(),
-             hotelSection(),
-             
+              chercheSection(),
+              hotelSection(),
             ],
           ),
         ));
@@ -99,101 +98,162 @@ class chercheSection extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: Column(
         children: [
-          Row(children: [ //dans mon row il y a le widget textfield et le widget elevatedbutton
-            Expanded( //widget responsive qui s'adapte au autres widget
-              child: 
-              Container( 
-                padding: EdgeInsets.only(left: 5),
+          Row(
+            children: [
+              //dans mon row il y a le widget textfield et le widget elevatedbutton
+              Expanded(
+                //widget responsive qui s'adapte au autres widget
+                child: Container(
+                  padding: EdgeInsets.only(left: 5),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade300,
+                          blurRadius: 4,
+                          offset: Offset(0, 3),
+                        ),
+                      ]),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Visitez les différents hotels de night city",
+                        contentPadding: EdgeInsets.all(10),
+                        border: InputBorder.none),
+                  ),
+                ),
+              ), //ici c'est mon champ de texte
+              SizedBox(
+                width: 10,
+              ),
+              Container(
+                height: 50,
+                width: 50,
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(30),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.shade300,
                       blurRadius: 4,
-                      offset: Offset(0,3),
-                    ),
-                  ]),
-                child: TextField(
-                  decoration: InputDecoration(hintText: "Visitez les différents hotels de night city", contentPadding: EdgeInsets.all(10),
-                  border: InputBorder.none),
-                ),),), //ici c'est mon champ de texte
-                SizedBox(width: 10,),
-            Container(
-              height: 50, 
-              width: 50,
-              decoration: BoxDecoration(
-                boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade300,
-                      blurRadius: 4,
-                      offset: Offset(0,4),
+                      offset: Offset(0, 4),
                     ),
                   ],
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                 ),
                 child: ElevatedButton(
-                  onPressed: (){}, 
-                    child: Icon(Icons.search, size: 26,), 
-                      style: ElevatedButton.styleFrom(
-                         shape: CircleBorder(),
-                         padding: EdgeInsets.all(10),
-                         primary: d_redus,
-                ),),
+                  onPressed: () {},
+                  child: Icon(
+                    Icons.search,
+                    size: 26,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(10),
+                    primary: d_redus,
+                  ),
+                ),
               ),
-          ],),
+            ],
+          ),
           SizedBox(height: 10), //pour espacer les widgets
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween, //permet l'alignement 
+            mainAxisAlignment:
+                MainAxisAlignment.spaceBetween, //permet l'alignement
             children: [
               Container(
-                margin:EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children:[
-                  Text("Choisir la date" , 
-                  style: GoogleFonts.nunito(
-                    color: d_redus,
-                    fontSize: 15,
-                  ),),
-                   SizedBox(height: 5),
-                  Text("22 dec - 28 dec",
-                  style: GoogleFonts.nunito(
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),)
-                  ]
-                  
-                ),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Choisir la date",
+                        style: GoogleFonts.nunito(
+                          color: d_redus,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "22 dec - 28 dec",
+                        style: GoogleFonts.nunito(
+                          color: Colors.black,
+                          fontSize: 17,
+                        ),
+                      )
+                    ]),
               ),
-               Container(
-                margin:EdgeInsets.all(10),
+              Container(
+                margin: EdgeInsets.all(10),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start, //permet l'alignement 
-                  children:[
-                  Text("Nombre de chambres",
-                  style: GoogleFonts.nunito(
-                    color: d_redus,
-                    fontSize: 15,
-                  ),),
-                  SizedBox(height: 5),
-                  Text("1 adulte - 2 adultes",
-                  style: GoogleFonts.nunito(
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),)
-                  ]
-                  
-                ),
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, //permet l'alignement
+                    children: [
+                      Text(
+                        "Nombre de chambres",
+                        style: GoogleFonts.nunito(
+                          color: d_redus,
+                          fontSize: 15,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      Text(
+                        "1 adulte - 2 adultes",
+                        style: GoogleFonts.nunito(
+                          color: Colors.black,
+                          fontSize: 17,
+                        ),
+                      )
+                    ]),
               )
             ],
           ),
-        ],),
+        ],
+      ),
     );
   }
 }
+
 //section hotel
 class hotelSection extends StatelessWidget {
+  final List hotelList = [
+    {
+      "titre" : "Konpeki Plaza",
+      "Localisation": "Corpo Plaza, Night City",
+      "distance" : 2,
+      "review" : 522,
+      "photo" : "assets/hotel2.jpeg",
+      "prix" : "800"
+
+    },
+     {
+      "titre" : "Hoteru",
+      "Localisation": "Watson, Night City",
+      "distance" : 1,
+      "review" : 42,
+      "photo" : "assets/hotel1.jpg",
+      "prix" : "15"
+
+    },
+     {
+      "titre" : "Biotechnica Hotel",
+      "Localisation": "JapanTown, Night City",
+      "distance" : 4,
+      "review" : 622,
+      "photo" : "assets/hotel3.jpg",
+      "prix" : "650"
+
+    },
+     {
+      "titre" : "No Tell Motel",
+      "Localisation": "Pacifica, Night City",
+      "distance" : 6,
+      "review" : 122,
+      "photo" : "assets/hotel4.jpg",
+      "prix" : "60"
+
+    }
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -202,39 +262,48 @@ class hotelSection extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            color: Colors.red,
             height: 50,
             child: Row(
-                children: [
-                  Text("4 hotels trouvés", 
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "4 hotels trouvés",
                   style: GoogleFonts.nunito(
                     color: Colors.black,
-                    fontSize:15,
-                  ) ,),
-                  Row(
-                    children: [
-                      Text("Filtres", 
-                  style: GoogleFonts.nunito(
-                    color: Colors.black,
-                    fontSize:15,
-                  ) ,),
-                  IconButton( 
-                  icon: Icon(
-                    Icons.filter_list_outlined,
-                  color: d_redus,size: 25,),
-                  onPressed: null,),
-                    ],
-                  )
-                ],
+                    fontSize: 15,
+                  ),
+                ),
+                Row(
+                  children: [
+                    Text(
+                      "Filtres",
+                      style: GoogleFonts.nunito(
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.filter_list_outlined,
+                        color: d_redus,
+                        size: 25,
+                      ),
+                      onPressed: null,
+                    ),
+                  ],
+                )
+              ],
             ),
           ),
-            Container(
-            color: Colors.blue,
-            height: 1000,
-          )
+         Column(
+           children: hotelList.map((hotel){ //j'appelle le contenu du tableau de ma variable hotelist
+             return Container(
+               child:Text(hotel["titre"]),
+             );
+           }).toList(),
+         )
         ],
       ),
     );
   }
 }
-
