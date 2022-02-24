@@ -361,9 +361,50 @@ class hotelCard extends StatelessWidget {
               ),
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Row(
+                mainAxisAlignment:MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(hotelData['titre']),
+                  Text(hotelData['titre'], style: GoogleFonts.nunito(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                  ),),
+                  Text(" \$" + hotelData['prix'], style: GoogleFonts.nunito(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800,
+                  ),),
+                ],
+              ),
+              
+              
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical:10),
+              child: Row(
+                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(hotelData['Localisation'], style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey[500],
+                  ),),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.place,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                      //toString va permettre de transformer ma variable nombre en chaine de caractère 
+                      Text(hotelData['distance'].toString() + " km " ,
+                      style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey[500],
+                  ),),   
+                    ],
+                  ) , 
+                  Text("par nuit") ,
                 ],
               ),
             ),
