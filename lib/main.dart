@@ -379,7 +379,7 @@ class hotelCard extends StatelessWidget {
               
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical:10),
+              margin: EdgeInsets.symmetric(horizontal:10),
               child: Row(
                 mainAxisAlignment:MainAxisAlignment.spaceBetween,
                 children: [
@@ -406,8 +406,8 @@ class hotelCard extends StatelessWidget {
                   ) , 
                   Text("par nuit" ,style: GoogleFonts.nunito(
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[500],
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey.shade800
                   ) ) ,
                 ],
               ),
