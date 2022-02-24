@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/main.dart';
 
+const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
+const d_redus = Color(0xFFFF4A57);
+const d_yellow = Color(0xFFfcec0c);
+
+
 
 class Konpeki extends StatelessWidget {
   @override
@@ -15,7 +20,7 @@ class Konpeki extends StatelessWidget {
               Column(
             children: [
               //car on va avoir plusieurs widget à l'intérieur
-             
+             chercheSection(),
             ],
           ),
         ));
@@ -69,5 +74,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ],
         centerTitle: true,
         backgroundColor: Color(0xFFfcec0c));
+  }
+}
+
+class chercheSection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      color: Colors.grey[100],
+     
+    );
   }
 }

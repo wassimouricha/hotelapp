@@ -37,7 +37,9 @@ class HomePage extends StatelessWidget {
               Column(
             children: [
               //car on va avoir plusieurs widget à l'intérieur
+              
               chercheSection(),
+              description(),
               hotelSection(),
             ],
           ),
@@ -152,6 +154,7 @@ class chercheSection extends StatelessWidget {
                   child: Icon(
                     Icons.search,
                     size: 26,
+                    color: d_lightblue,
                   ),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
@@ -336,11 +339,7 @@ class hotelCard extends StatelessWidget {
         child: Column(
           children: [
             GestureDetector(
-                onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return Konpeki();
-                    })); },
+                onTap: null, //gesture detector et ontap permet de passer vers un autre liens en detectant le fait de clicquer 
               child: Container(
                 
                 height: 140,
@@ -489,5 +488,76 @@ class hotelCard extends StatelessWidget {
             ),
           ],
         ));
+  }
+}
+
+class description extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+      color: Colors.grey[100],
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: 
+      Column(
+        children: [
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            
+            children: [
+              
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child:
+                Text(
+               
+                    "Cliquez sur le bouton pour lire la description des lieux",
+                    style: GoogleFonts.nunito(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                      
+                    ),
+                  ),
+                  ),
+             
+              Container(
+                height: 50,
+                width: 50,
+                
+                decoration: BoxDecoration(
+                
+                  borderRadius: BorderRadius.all(Radius.circular(25)),
+                  color: d_redus,
+                ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Konpeki();
+                    }));  //en écrivant cette synthaxe j'indique que lorsque l'on clique sur le bouton ça redirige vers la page calendrier
+                  } ,
+                  
+                  child: 
+                  Icon(
+                    Icons.adjust,
+                    size: 26,
+                    color: d_lightblue,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    shape: CircleBorder(),
+                    padding: EdgeInsets.all(10),
+                    
+                    primary: d_redus,
+                  ),
+                ),
+              ),
+            ],
+          ),
+         
+        ],
+      ),
+    );
   }
 }
