@@ -20,7 +20,7 @@ class Konpeki extends StatelessWidget {
               Column(
             children: [
               //car on va avoir plusieurs widget à l'intérieur
-             chercheSection(),
+             slider(),
             ],
           ),
         ));
@@ -77,7 +77,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
-class chercheSection extends StatelessWidget {
+class slider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -523,6 +523,7 @@ class description extends StatelessWidget {
                   ),
              
               Container(
+                 padding: EdgeInsets.fromLTRB(0, 0, 0, 1),
                 height: 50,
                 width: 50,
                 
