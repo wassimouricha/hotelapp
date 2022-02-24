@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hotelapp/calendar_page.dart';
 
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
@@ -141,7 +142,12 @@ class chercheSection extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(25)),
                 ),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Calendrier();
+                    }));  //en écrivant cette synthaxe j'indique que lorsque l'on clique sur le bouton ça redirige vers la page calendrier
+                  },
                   child: Icon(
                     Icons.search,
                     size: 26,
@@ -342,7 +348,8 @@ class hotelCard extends StatelessWidget {
                       .cover, //permet a l'image de prendre l'entiereté du container
                 ),
               ),
-              child: Stack( //widget button qui sera superposé au dessus
+              child: Stack(
+                //widget button qui sera superposé au dessus
                 children: [
                   Positioned(
                       top: 8,
@@ -363,31 +370,38 @@ class hotelCard extends StatelessWidget {
             Container(
               margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               child: Row(
-                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(hotelData['titre'], style: GoogleFonts.nunito(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                  ),),
-                  Text(" \$" + hotelData['prix'], style: GoogleFonts.nunito(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800,
-                  ),),
+                  Text(
+                    hotelData['titre'],
+                    style: GoogleFonts.nunito(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                  Text(
+                    " \$" + hotelData['prix'],
+                    style: GoogleFonts.nunito(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ],
               ),
-              
-              
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal:10),
+              margin: EdgeInsets.symmetric(horizontal: 10),
               child: Row(
-                mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(hotelData['Localisation'], style: GoogleFonts.nunito(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[500],
-                  ),),
+                  Text(
+                    hotelData['Localisation'],
+                    style: GoogleFonts.nunito(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[500],
+                    ),
+                  ),
                   Row(
                     children: [
                       Icon(
@@ -395,26 +409,24 @@ class hotelCard extends StatelessWidget {
                         color: d_redus,
                         size: 14.0,
                       ),
-                      //toString va permettre de transformer ma variable nombre en chaine de caractère 
-                      Text(hotelData['distance'].toString() + " km " ,
-                      style: GoogleFonts.nunito(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[500],
-                  ),),   
+                      //toString va permettre de transformer ma variable nombre en chaine de caractère
+                      Text(
+                        hotelData['distance'].toString() + " km ",
+                        style: GoogleFonts.nunito(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey[500],
+                        ),
+                      ),
                     ],
-                  ) , 
-                  Text("par nuit" ,style: GoogleFonts.nunito(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.grey.shade800
-                  ) 
-                ),
-                
+                  ),
+                  Text("par nuit",
+                      style: GoogleFonts.nunito(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.grey.shade800)),
                 ],
-                
               ),
-              
             ),
             Container(
               margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
@@ -425,35 +437,40 @@ class hotelCard extends StatelessWidget {
                       Icon(
                         Icons.star_rate,
                         color: d_redus,
-                        size: 14.0,),
-                          Icon(
+                        size: 14.0,
+                      ),
+                      Icon(
                         Icons.star_rate,
                         color: d_redus,
-                        size: 14.0,),
-                          Icon(
+                        size: 14.0,
+                      ),
+                      Icon(
                         Icons.star_rate,
                         color: d_redus,
-                        size: 14.0,),
-                          Icon(
+                        size: 14.0,
+                      ),
+                      Icon(
                         Icons.star_rate,
                         color: d_redus,
-                        size: 14.0,),
-                          Icon(
+                        size: 14.0,
+                      ),
+                      Icon(
                         Icons.star_border,
                         color: d_redus,
-                        size: 14.0,),
+                        size: 14.0,
+                      ),
                     ],
                   ),
                   SizedBox(
                     width: 20,
                   ),
-                  Text(hotelData['review'].toString() + " Avis " , 
-                  style: GoogleFonts.nunito(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.grey[500]),
-                    ),
-                  
+                  Text(
+                    hotelData['review'].toString() + " Avis ",
+                    style: GoogleFonts.nunito(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[500]),
+                  ),
                 ],
               ),
             ),
