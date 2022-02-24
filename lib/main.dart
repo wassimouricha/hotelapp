@@ -512,7 +512,7 @@ class description extends StatelessWidget {
                 child:
                 Text(
                
-                    "Cliquez sur le bouton pour lire la description des lieux",
+                    "Cliquez sur le bouton ",
                     style: GoogleFonts.nunito(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,

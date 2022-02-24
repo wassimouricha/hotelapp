@@ -101,14 +101,14 @@ class PeriodSection extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
-                    color: Colors.grey[700],
+                    color: d_redus,
                   ),
                 ),
                 SizedBox(
                   height: 4,
                 ),
                 Text(
-                  'Month 12 Dec',
+                  'Lundi 12 Dec',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -126,18 +126,18 @@ class PeriodSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Return',
+                  'Retour',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
-                    color: Colors.grey[700],
+                    color:d_redus,
                   ),
                 ),
                 SizedBox(
                   height: 4,
                 ),
                 Text(
-                  'Tues 22 Dec',
+                  'Mardi 22 Dec',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -264,9 +264,9 @@ class ValidateBookingSection extends StatelessWidget {
           groupValue: selectedRadio,
           selected: true,
           title: Text(
-            "Flexible with dates",
+            "Flexibilités des dates",
             style: new TextStyle(
-              color: Colors.black,
+              color: d_redus,
               fontSize: 20.0,
             ),
           ),
@@ -277,7 +277,7 @@ class ValidateBookingSection extends StatelessWidget {
           width: double.infinity,
           child: ElevatedButton(
             child: Text(
-              'Apply',
+              'Appliqué',
               style: TextStyle(fontSize: 17),
             ),
             style: ElevatedButton.styleFrom(
@@ -288,7 +288,7 @@ class ValidateBookingSection extends StatelessWidget {
               ),
             ),
             onPressed: () {
-              print('Apply Booking');
+              print(' Booking validé');
               Navigator.pop(context);
             },
           ),
