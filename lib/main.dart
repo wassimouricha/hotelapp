@@ -408,7 +408,52 @@ class hotelCard extends StatelessWidget {
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
                     color: Colors.grey.shade800
-                  ) ) ,
+                  ) 
+                ),
+                
+                ],
+                
+              ),
+              
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+              child: Row(
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,),
+                          Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,),
+                          Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,),
+                          Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,),
+                          Icon(
+                        Icons.star_border,
+                        color: d_redus,
+                        size: 14.0,),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(hotelData['review'].toString() + " Avis " , 
+                  style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.grey[500]),
+                    ),
+                  
                 ],
               ),
             ),
