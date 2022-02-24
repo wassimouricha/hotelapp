@@ -404,7 +404,11 @@ class hotelCard extends StatelessWidget {
                   ),),   
                     ],
                   ) , 
-                  Text("par nuit") ,
+                  Text("par nuit" ,style: GoogleFonts.nunito(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey[500],
+                  ) ) ,
                 ],
               ),
             ),
