@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/calendar_page.dart';
+import 'package:hotelapp/konpeki.dart';
 
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
@@ -334,37 +335,49 @@ class hotelCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Container(
-              height: 140,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(18),
-                    topRight: Radius.circular(18)),
-                image: DecorationImage(
-                  image: AssetImage(
-                    hotelData['photo'],
+            GestureDetector(
+                onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Konpeki();
+                    })); },
+              child: Container(
+                
+                height: 140,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(18),
+                      topRight: Radius.circular(18)),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      hotelData['photo'],
+                    ),
+                    
+                    fit: BoxFit
+                        .cover, 
+                        //permet a l'image de prendre l'entiereté du container
                   ),
-                  fit: BoxFit
-                      .cover, //permet a l'image de prendre l'entiereté du container
                 ),
-              ),
-              child: Stack(
-                //widget button qui sera superposé au dessus
-                children: [
-                  Positioned(
-                      top: 8,
-                      right: -15,
-                      child: MaterialButton(
-                        color: d_yellow,
-                        shape: CircleBorder(),
-                        onPressed: () {},
-                        child: Icon(
-                          Icons.favorite_outline_rounded,
-                          color: d_redus,
-                          size: 20,
-                        ),
-                      ))
-                ],
+                child: Stack(
+                  //widget button qui sera superposé au dessus
+                  children: [
+                    Positioned(
+                        top: 8,
+                        right: -15,
+                        child: MaterialButton(
+                          color: d_yellow,
+                          shape: CircleBorder(),
+                          onPressed: () {},
+                          child: Icon(
+                            Icons.favorite_outline_rounded,
+                            color: d_redus,
+                            size: 20,
+                            
+                          ),
+                        ))
+                  ],
+                ),
+                
               ),
             ),
             Container(
