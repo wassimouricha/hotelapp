@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: d_blue,
+        backgroundColor:  Colors.grey[100],
         appBar: MyAppBar(),
         body: SingleChildScrollView(
           child: //SingleChildScrollView permet d'empecher l'erreur d'overflow et donc de scroller
