@@ -48,7 +48,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => new Size.fromHeight(50);
 
   String titreDeApp = "NC Hotel Booking";
-  String explore = "Explorer";
+  String explore = "Accueil";
 
   @override
   Widget build(BuildContext context) {
