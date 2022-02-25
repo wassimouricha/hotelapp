@@ -217,6 +217,15 @@ class descriptionK extends StatelessWidget {
                   ),
       ]),),
       SizedBox(height:5),
+      ClipRRect(
+  borderRadius: BorderRadius.circular(20),
+  child: Image.asset(
+    
+      "assets/hotel1.jpg",
+  ),
+),
+      
+       SizedBox(height:5),
       
           Text(
         "Le Konpeki Plaza est une chaîne mondiale d'hôtels de luxe dont certains sont situés à Tokyo, Paris, Singapour,Washington et Night City.",
@@ -312,9 +321,11 @@ class descriptionB extends StatelessWidget {
                   ),
       ]),),
       SizedBox(height:5),
+      Image.asset("assets/hotel2.jpeg"),
+       SizedBox(height:5),
       
           Text(
-        "Le Konpeki Plaza est une chaîne mondiale d'hôtels de luxe dont certains sont situés à Tokyo, Paris, Singapour,Washington et Night City.",
+        "L'hôtel Biotechnica est situé dans Downtown, City Center, Night City. L'hôtel est détenu et exploité par Biotechnica, y compris la sécurité. ",
         style: GoogleFonts.nunito(
           color: Colors.black,
           fontSize: 15,
@@ -323,31 +334,14 @@ class descriptionB extends StatelessWidget {
       ),
       SizedBox(height:5),
        Text(
-        "Elle se présente comme l'hôtel pour l'élite corpo du monde, et se vante de combiner la « grandeur américaine » et le « minimalisme japonais » La société possède des liens étroits avec Arasaka, qui lui fournit notamment ses gardes de sécurité.",
+        "Seuls les employés de la société peuvent obtenir des appartements dans cet hôtel.",
         style: GoogleFonts.nunito(
           color: Colors.black,
           fontSize: 15,
           fontWeight: FontWeight.w500,
         ),
       ),
-      SizedBox(height:5),
-       Text(
-        "Le site de Night City est fréquenté par des cadres corpo qui viennent de l'extérieur de la ville, et le bar du hall est un endroit populaire où ils peuvent se mêler aux plus grands de Night City, y compris le maire. Le bâtiment compte 80 étages, 420 chambres, 20 salles de conférence et un penthouse au dernier étage réservé aux VIP. ",
-        style: GoogleFonts.nunito(
-          color: Colors.black,
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      SizedBox(height:5),
-       Text(
-        " Les clients ont accès 24 heures sur 24 au bar, à une galerie d'art, à un sauna, à une piscine, à une salle de sport, à un salon de massage, à un salon de danse sensoriellerécemment ouvert, et à d'autres installations aux étages inférieurs.",
-        style: GoogleFonts.nunito(
-          color: Colors.black,
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      
       ]),
      
     );

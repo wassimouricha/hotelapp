@@ -277,7 +277,7 @@ class ValidateBookingSection extends StatelessWidget {
           width: double.infinity,
           child: ElevatedButton(
             child: Text(
-              'Appliqué',
+              'Appliquer',
               style: TextStyle(fontSize: 17),
             ),
             style: ElevatedButton.styleFrom(
