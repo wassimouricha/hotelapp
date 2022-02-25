@@ -1,58 +1,25 @@
-import 'dart:ffi';
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/main.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
 const d_redus = Color(0xFFFF4A57);
 const d_yellow = Color(0xFFfcec0c);
 
-
-class DataModel {
-  final String title;
-  final String imageName;
-  DataModel(
-    this.title,
-    this.imageName
-  );
-}
-
-List<DataModel> dataList = [
-
-DataModel("Konpeki plaza","assets/hotel1.jpg"),
-DataModel("Hoteru","assets/hotel2.jpeg"),
-DataModel("Biotechnica Hotel","assets/hotel3.jpg"),
-DataModel("No Tell Motel","assets/hotel4.jpg"),
-
-
+final List<String> imgList = [
+  'assets/hotel1.jpg',
+  'assets/hotel2.jpeg',
+  'assets/hotel3.jpg',
+  'assets/hotel4.jpg',
+  'assets/konpeki1.png',
+  'assets/konpeki2.webp'
 ];
 
-class HomeScreen extends StatefulWidget {
-const HomeScreen({Key? key}) : super(key: key);
-
-@override
-
-_Konpeki createState() => _Konpeki();
-
-}
 
 
-
-class _Konpeki extends State<HomeScreen> {
-
-  late PageController _pageController;
-  int _currentPage = 0;
-  
-  @override
-  void initState(){
-
-    super.initState();
-    _pageController = PageController(initialPage: _currentPage, viewportFraction: 0.8);
-  }
-
+class Konpeki extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,18 +33,11 @@ class _Konpeki extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 
             children: [
-
+             
+              
               //car on va avoir plusieurs widget à l'intérieur
               titre(),
-              PageView.builder(
-                itemCount: dataList.length,
-                physics: const ClampingScrollPhysics(),
-                controller: ,
-                itemBuilder: (context, index){
-                  return slider(index);
-                },
-                ),
-             
+             slider(),
             ],
           ),
         ));
@@ -140,7 +100,7 @@ class titre extends StatelessWidget {
     return Container(
      
        
-                padding: EdgeInsets.symmetric(vertical: 40),
+                padding: EdgeInsets.symmetric(vertical: 5),
                 child:
                 Text("Retrouvez vos hotels préférés de Night City",
               style: GoogleFonts.nunito(
@@ -155,11 +115,61 @@ class titre extends StatelessWidget {
   }
 }
 
-
-  Widget slider(int index) {
+class slider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Container(
-
-      
+        child:
+        //le carousel à été intégré avec la demo sur la documentation du site de flutter 
+      CarouselSlider(
+          options: CarouselOptions(
+            autoPlay: true,
+            aspectRatio: 2.0,
+            enlargeCenterPage: true,
+          ),
+          items: imgList
+    .map((item) => Container(
+          child: Container(
+            margin: EdgeInsets.all(5.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                child: Stack(
+                  children: <Widget>[
+                    Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                    Positioned(
+                      
+                      left: 0,
+                      right: 0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Color.fromARGB(200, 0, 0, 0),
+                              Color.fromARGB(200, 0, 0, 0)
+                            ],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                          ),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 5.0, horizontal: 20.0),
+                        child: Text(
+                          'v77',
+                          style: TextStyle(
+                            color: d_yellow,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+        ))
+    .toList(),
+        ),
      
     );
   }
+}
