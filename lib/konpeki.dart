@@ -96,7 +96,7 @@ class titre extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 5),
       child: Text(
-        "Retrouvez vos hotels préférés de Night City",
+        "Les  hotels  de Night City",
         style: GoogleFonts.nunito(
           color: d_lightblue,
           fontSize: 17,
@@ -127,7 +127,7 @@ class slider extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(5.0)),
                         child: Stack(
                           children: <Widget>[
-                            Image.network(item,
+                            Image.asset(item,
                                 fit: BoxFit.cover, width: 1000.0),
                             Positioned(
                               left: 0,
