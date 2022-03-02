@@ -36,7 +36,8 @@ class Konpeki extends StatelessWidget {
               slider(),
               Card(),
               Card2(),
-              Card3()
+              Card3(),
+              Card4(),
             ],
           ),
         ));
@@ -393,7 +394,7 @@ class descriptionC extends StatelessWidget {
                         size: 14.0,
                       ),
                       Icon(
-                        Icons.star_border,
+                        Icons.star_rate,
                         color: d_redus,
                         size: 14.0,
                       ),
@@ -436,6 +437,86 @@ class descriptionC extends StatelessWidget {
     );
   }
 }
+
+class descriptionD extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 5,horizontal: 5),
+      child:
+      
+      Column(
+        crossAxisAlignment:
+                        CrossAxisAlignment.start,
+        children: 
+      [Container(child: Row(
+       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [Text(
+        
+        "Hoteru",
+        style: GoogleFonts.nunito(
+          color: d_redus,
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+        Row(
+                    children: [
+                      Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                      Icon(
+                        Icons.star_rate,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                      Icon(
+                        Icons.star_border,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                      Icon(
+                        Icons.star_border,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                      Icon(
+                        Icons.star_border,
+                        color: d_redus,
+                        size: 14.0,
+                      ),
+                    ],
+                  ),
+      ]),),
+      SizedBox(height:5),
+       ClipRRect(
+  borderRadius: BorderRadius.circular(20),
+  child: Image.asset(
+    
+      "assets/hotel1.jpg",
+  ),
+),
+     
+       SizedBox(height:5),
+      
+          Text(
+        "Un des hotels les plus bas de gamme de tout Night city , mais les prix des nuits sont très abordables ",
+        style: GoogleFonts.nunito(
+          color: Colors.black,
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+     
+      
+      ]),
+     
+    );
+  }
+}
+
 
 
 
@@ -519,6 +600,35 @@ class Card3 extends StatelessWidget {
           ],
         )
         ,child: descriptionC(),);
+        
+            
+         
+                
+        
+  }
+}
+
+class Card4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+        margin: EdgeInsets.all(10),
+        
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(18)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              spreadRadius: 4,
+              blurRadius: 6,
+              offset: Offset(0, 3),
+            )
+          ],
+        )
+        ,child: descriptionD(),);
         
             
          
