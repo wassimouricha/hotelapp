@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^2.3.1
   table_calendar: ^3.0.4
   carousel_slider: ^4.0.0
+  font_awesome_flutter: ^9.2.0
   
 
 dev_dependencies:
@@ -46,7 +47,7 @@ dev_dependencies:
   flutter_native_splash: ^2.0.5
 
 flutter_native_splash:
-  color: "#ffffff"
+  color: "#000000"
   image: assets/nightcity-logo.png
   
 
