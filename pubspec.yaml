@@ -38,6 +38,7 @@ dependencies:
   table_calendar: ^3.0.4
   carousel_slider: ^4.0.0
   font_awesome_flutter: ^9.2.0
+  lottie: ^1.2.2
   
 
 dev_dependencies:

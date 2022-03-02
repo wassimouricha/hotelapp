@@ -102,6 +102,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 //je vais déclarer séparement les deux sections
 //section recherche
 class chercheSection extends StatelessWidget {
+  // AccessToken? _accessToken ==> connections facebook abandonné pour l'instant
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -192,7 +194,7 @@ class chercheSection extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    
+
                   },
                   style: ElevatedButton.styleFrom(
                     shape: StadiumBorder(),
