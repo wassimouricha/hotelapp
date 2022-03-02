@@ -193,7 +193,7 @@ class bioCard extends StatelessWidget {
                         size: 14.0,
                       ),
                       Icon(
-                        Icons.star_border,
+                        Icons.star_rate,
                         color: d_redus,
                         size: 14.0,
                       ),

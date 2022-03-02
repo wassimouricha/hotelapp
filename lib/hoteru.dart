@@ -190,12 +190,12 @@ class hoteruCard extends StatelessWidget {
                         size: 14.0,
                       ),
                       Icon(
-                        Icons.star_rate,
+                        Icons.star_border,
                         color: d_redus,
                         size: 14.0,
                       ),
                       Icon(
-                        Icons.star_rate,
+                        Icons.star_border,
                         color: d_redus,
                         size: 14.0,
                       ),

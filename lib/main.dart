@@ -105,7 +105,7 @@ class chercheSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 230,
+      height: 330,
       color: Colors.grey[100],
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: 
@@ -157,10 +157,7 @@ class chercheSection extends StatelessWidget {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return Calendrier();
-                    }));  //en écrivant cette synthaxe j'indique que lorsque l'on clique sur le bouton ça redirige vers la page calendrier
+                  //en écrivant cette synthaxe j'indique que lorsque l'on clique sur le bouton ça redirige vers la page calendrier
                   },
                   child: Icon(
                     Icons.search,
@@ -207,6 +204,37 @@ class chercheSection extends StatelessWidget {
                       SizedBox(width: 10),
                       Text(
                         "Facebook",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    ],
+                  )),
+                  SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Calendrier();
+                    })); 
+                    
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: StadiumBorder(),
+                    primary: d_lightblue,
+                    padding: EdgeInsets.all(14),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(FontAwesomeIcons.calendar),
+                      SizedBox(width: 10),
+                      Text(
+                        "Calendrier des disponibilitées",
                         style: GoogleFonts.poppins(
                           color: Colors.white,
                           fontSize: 16,
