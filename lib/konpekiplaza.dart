@@ -1,6 +1,3 @@
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/calendar_page.dart';
@@ -10,8 +7,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hotelapp/hoteru.dart';
 import 'package:hotelapp/biotechnica.dart';
 import 'package:hotelapp/notellmotel.dart';
-
-
 
 //section hotel
 class hotelSection extends StatelessWidget {
@@ -56,69 +51,73 @@ class hotelSection extends StatelessWidget {
       padding: EdgeInsets.all(10),
       color: Colors.grey[100],
       child: Column(
-        children:[
-        delayedAnimation(delay: 2000, child: Column(
-
-       
         children: [
-          Container(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          delayedAnimation(
+            delay: 2000,
+            child: Column(
               children: [
-                Text(
-                  "4 hotels trouvés",
-                  style: GoogleFonts.nunito(
-                    color: Colors.black,
-                    fontSize: 15,
+                Container(
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "4 hotels trouvés",
+                        style: GoogleFonts.nunito(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Filtres",
+                            style: GoogleFonts.nunito(
+                              color: Colors.black,
+                              fontSize: 15,
+                            ),
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              Icons.filter_list_outlined,
+                              color: d_redus,
+                              size: 25,
+                            ),
+                            onPressed: null,
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                 ),
-                Row(
+                Column(
                   children: [
-                    Text(
-                      "Filtres",
-                      style: GoogleFonts.nunito(
-                        color: Colors.black,
-                        fontSize: 15,
+                    delayedAnimation(
+                      delay: 3000,
+                      child: Column(
+                        children: [
+                          hotelCard(),
+                          hoteruCard(),
+                          bioCard(),
+                          notellCard(),
+                        ],
                       ),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.filter_list_outlined,
-                        color: d_redus,
-                        size: 25,
-                      ),
-                      onPressed: null,
                     ),
                   ],
-                )
+                  //j'appelle le contenu du tableau de ma variable hotelist, on parcours la liste avec map et en dessous on renvoie le widget hotelCard
+                ),
               ],
             ),
           ),
-          Column(
-            children:[
-              delayedAnimation(delay: 3000, child: 
-              Column(
-            children:  [
-               hotelCard(),
-               hoteruCard(),
-               bioCard(),
-               notellCard(),
-            ],),),],
-              //j'appelle le contenu du tableau de ma variable hotelist, on parcours la liste avec map et en dessous on renvoie le widget hotelCard
-            
-            ),
-          
         ],
       ),
-    ),],),);
+    );
   }
 }
 
 //ici je vais creer le widget des cartes
 
 class hotelCard extends StatelessWidget {
- 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -140,9 +139,9 @@ class hotelCard extends StatelessWidget {
         child: Column(
           children: [
             GestureDetector(
-                onTap: null, //gesture detector et ontap permet de passer vers un autre liens en detectant le fait de clicquer 
+              onTap:
+                  null, //gesture detector et ontap permet de passer vers un autre liens en detectant le fait de clicquer
               child: Container(
-                
                 height: 140,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -150,12 +149,11 @@ class hotelCard extends StatelessWidget {
                       topRight: Radius.circular(18)),
                   image: DecorationImage(
                     image: AssetImage(
-                     "assets/hotel2.jpeg",
+                      "assets/hotel2.jpeg",
                     ),
-                    
-                    fit: BoxFit
-                        .cover, 
-                        //permet a l'image de prendre l'entiereté du container
+
+                    fit: BoxFit.cover,
+                    //permet a l'image de prendre l'entiereté du container
                   ),
                 ),
                 child: Stack(
@@ -172,12 +170,10 @@ class hotelCard extends StatelessWidget {
                             Icons.favorite_outline_rounded,
                             color: d_redus,
                             size: 20,
-                            
                           ),
                         ))
                   ],
                 ),
-                
               ),
             ),
             Container(
@@ -187,7 +183,7 @@ class hotelCard extends StatelessWidget {
                 children: [
                   Text(
                     // hotelData['titre']
-                     "Konpeki Plaza",
+                    "Konpeki Plaza",
                     style: GoogleFonts.nunito(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
@@ -228,8 +224,7 @@ class hotelCard extends StatelessWidget {
                       //toString va permettre de transformer ma variable nombre en chaine de caractère
                       Text(
                         // hotelData['distance'].toString() + " km "
-                        "2 km"
-                        ,
+                        "2 km",
                         style: GoogleFonts.nunito(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -283,8 +278,8 @@ class hotelCard extends StatelessWidget {
                     width: 20,
                   ),
                   Text(
-                    // hotelData['review'].toString() + 
-                      " 522 Avis ",
+                    // hotelData['review'].toString() +
+                    " 522 Avis ",
                     style: GoogleFonts.nunito(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,

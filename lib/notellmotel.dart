@@ -1,6 +1,3 @@
-
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/calendar_page.dart';
@@ -8,30 +5,22 @@ import 'package:hotelapp/konpeki.dart';
 import 'package:hotelapp/delayed_animation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
-
 //section hotel
 
-  final List hotelList = [
-    
- 
-   
-    {
-      "titre": "No Tell Motel",
-      "Localisation": "Pacifica, Night City",
-      "distance": 6,
-      "review": 122,
-      "photo": "assets/hotel4.jpg",
-      "prix": "60"
-    }
-  ];
-
-  
+final List hotelList = [
+  {
+    "titre": "No Tell Motel",
+    "Localisation": "Pacifica, Night City",
+    "distance": 6,
+    "review": 122,
+    "photo": "assets/hotel4.jpg",
+    "prix": "60"
+  }
+];
 
 //ici je vais creer le widget des cartes
 
 class notellCard extends StatelessWidget {
- 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,9 +42,9 @@ class notellCard extends StatelessWidget {
         child: Column(
           children: [
             GestureDetector(
-                onTap: null, //gesture detector et ontap permet de passer vers un autre liens en detectant le fait de clicquer 
+              onTap:
+                  null, //gesture detector et ontap permet de passer vers un autre liens en detectant le fait de clicquer
               child: Container(
-                
                 height: 140,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -63,12 +52,11 @@ class notellCard extends StatelessWidget {
                       topRight: Radius.circular(18)),
                   image: DecorationImage(
                     image: AssetImage(
-                     "assets/hotel4.jpg",
+                      "assets/hotel4.jpg",
                     ),
-                    
-                    fit: BoxFit
-                        .cover, 
-                        //permet a l'image de prendre l'entiereté du container
+
+                    fit: BoxFit.cover,
+                    //permet a l'image de prendre l'entiereté du container
                   ),
                 ),
                 child: Stack(
@@ -85,12 +73,10 @@ class notellCard extends StatelessWidget {
                             Icons.favorite_outline_rounded,
                             color: d_redus,
                             size: 20,
-                            
                           ),
                         ))
                   ],
                 ),
-                
               ),
             ),
             Container(
@@ -100,7 +86,7 @@ class notellCard extends StatelessWidget {
                 children: [
                   Text(
                     // hotelData['titre']
-                     "No Tell Motel",
+                    "No Tell Motel",
                     style: GoogleFonts.nunito(
                       fontSize: 18,
                       fontWeight: FontWeight.w800,
@@ -141,8 +127,7 @@ class notellCard extends StatelessWidget {
                       //toString va permettre de transformer ma variable nombre en chaine de caractère
                       Text(
                         // hotelData['distance'].toString() + " km "
-                        "6 km"
-                        ,
+                        "6 km",
                         style: GoogleFonts.nunito(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -196,8 +181,8 @@ class notellCard extends StatelessWidget {
                     width: 20,
                   ),
                   Text(
-                    // hotelData['review'].toString() + 
-                      " 122 Avis ",
+                    // hotelData['review'].toString() +
+                    " 122 Avis ",
                     style: GoogleFonts.nunito(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
