@@ -5,10 +5,33 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hotelapp/main.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
+
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
 const d_redus = Color(0xFFFF4A57);
 const d_yellow = Color(0xFFfcec0c);
+
+
+class bonuses extends StatefulWidget {
+  const bonuses({ Key? key }) : super(key: key);
+
+  @override
+  State<bonuses> createState() => _bonusesState();
+}
+
+class _bonusesState extends State<bonuses> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+         child: CircularProgressIndicator(
+            ),
+      )
+        
+
+    );
+  }
+}
 
 
 
@@ -27,6 +50,7 @@ class Bonus extends StatelessWidget {
             children: [
               //car on va avoir plusieurs widget à l'intérieur
               Card(),
+              bonuses(),
             
             ],
           ),
