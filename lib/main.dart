@@ -9,6 +9,7 @@ import 'package:hotelapp/konpeki.dart';
 import 'package:hotelapp/delayed_animation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hotelapp/konpekiplaza.dart';
+import 'package:hotelapp/bonus.dart';
 
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
@@ -48,6 +49,8 @@ class HomePage extends StatelessWidget {
               chercheSection(),
               description(),
               hotelSection(),
+              
+              
             ],
           ),
         ));
@@ -122,6 +125,7 @@ class chercheSection extends StatelessWidget {
                 child: 
                 
                 Container(
+                  
                   padding: EdgeInsets.only(left: 5),
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -308,6 +312,39 @@ class description extends StatelessWidget {
                   ),
               ),
               
+               delayedAnimation(delay: 2000, child: 
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                child:
+                ElevatedButton(
+                  onPressed: () {
+                     Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Bonus();
+                  },));},
+
+                  style: ElevatedButton.styleFrom(
+                    shape: StadiumBorder(),
+                    primary: d_redus,
+                    padding: EdgeInsets.all(14),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(FontAwesomeIcons.solidCaretSquareDown , ),
+                      SizedBox(width: 10),
+                      Text(
+                        "Bonus Stage",
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    ],
+                  )),
+                  ),
+              ),
 
             ],
           ),
