@@ -145,7 +145,7 @@ class descriptionD extends StatelessWidget {
   child: 
   
   // Image.network("https://i.giphy.com/media/pylNZOmEWUMwGXdzQj/200w.webp"),
-    new Image(image: new AssetImage("assets/cyber-punk2077samurai-dragon.gif"), height:200, width:200,),
+    new Image(image: new AssetImage("assets/cyber-punk2077samurai-dragon.gif"), height:300, width:300,),
 ),
      
        SizedBox(height:5),

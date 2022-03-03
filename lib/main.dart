@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
               //car on va avoir plusieurs widget à l'intérieur
               
               chercheSection(),
-              description(),
+             
               hotelSection(),
               
               
@@ -66,14 +66,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: d_lightblue,
-            size: 20,
-          ),
-          onPressed: null,
-        ),
+        // leading:
+        //  IconButton(
+          // icon: Icon(
+          //   Icons.arrow_back_ios_new,
+          //   color: d_lightblue,
+          //   size: 20,
+          // ),
+        //   onPressed: null,
+        // ),
+        
         title: Text(
           explore,
           style: GoogleFonts.kanit(
@@ -110,7 +112,7 @@ class chercheSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 330,
+      height: 530,
       color: Colors.grey[100],
       padding: EdgeInsets.fromLTRB(10, 25, 10, 10),
       child: 
@@ -242,7 +244,7 @@ class chercheSection extends StatelessWidget {
                       FaIcon(FontAwesomeIcons.calendar),
                       SizedBox(width: 10),
                       Text(
-                        "Calendrier des disponibilitées",
+                        "Calendrier",
                         style: GoogleFonts.poppins(
                           color: Colors.white,
                           fontSize: 16,
@@ -251,38 +253,10 @@ class chercheSection extends StatelessWidget {
                       )
                     ],
                   )),
-
-            ]),
-          ),
-        ),
-        ],
-      ),
-    ),);
-  }
-}
-
-
-
-class description extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-      color: Colors.grey[100],
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      child: 
-      Column(
-        children: [
-          
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            
-            children: [
-              delayedAnimation(delay: 2000, child: 
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child:
-                ElevatedButton(
+                  SizedBox(
+                height: 20,
+              ),
+                  ElevatedButton(
                   onPressed: () {
                      Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
@@ -300,7 +274,7 @@ class description extends StatelessWidget {
                       FaIcon(FontAwesomeIcons.handsHelping , ),
                       SizedBox(width: 10),
                       Text(
-                        "Description détaillé",
+                        "Description ",
                         style: GoogleFonts.poppins(
                           color: Colors.white,
                           fontSize: 16,
@@ -309,14 +283,10 @@ class description extends StatelessWidget {
                       )
                     ],
                   )),
-                  ),
+                  SizedBox(
+                height: 20,
               ),
-              
-               delayedAnimation(delay: 2000, child: 
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                child:
-                ElevatedButton(
+                  ElevatedButton(
                   onPressed: () {
                      Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
@@ -343,14 +313,61 @@ class description extends StatelessWidget {
                       )
                     ],
                   )),
-                  ),
-              ),
 
-            ],
+
+            ]),
           ),
-         
+        ),
         ],
       ),
-    );
+    ),);
   }
 }
+
+
+
+// class description extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+      
+//       color: Colors.grey[100],
+//       padding: EdgeInsets.symmetric(horizontal: 10),
+//       child: 
+//       Column(
+//         children: [
+          
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+            
+//             children: [
+//               delayedAnimation(delay: 2000, child: 
+//               Container(
+//                 margin: EdgeInsets.symmetric(horizontal: 10),
+//                 child:
+                
+//                   ),
+//               ),
+              
+            
+
+//             ],
+//           ),
+//             SizedBox(
+//                 height: 10,
+//               ),
+//               Column(children:[
+//             delayedAnimation(delay: 2000, child: 
+//               Container(
+               
+//                 child:
+                
+//                   ),
+//               ),],),
+//         ],
+
+        
+//       ),
+//     );
+//   }
+// }
