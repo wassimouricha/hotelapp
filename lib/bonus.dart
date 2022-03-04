@@ -252,8 +252,8 @@ class call extends StatelessWidget {
           //c'est la manière conventionnelle pour qu'un bouton vous redirige vers un lien
           final _call = "tel:$_phone";
          
-          if (await canLaunch(_phone)) {
-            await launch(_phone);
+          if (await canLaunch(_call)) {
+            await launch(_call);
           }
         },
         color: d_redus,
@@ -273,8 +273,8 @@ class mess extends StatelessWidget {
           //c'est la manière conventionnelle pour qu'un bouton vous redirige vers un lien
          
           final _text = "sms:$_phone";
-          if (await canLaunch(_phone)) {
-            await launch(_phone);
+          if (await canLaunch(_text)) {
+            await launch(_text);
           }
         },
         color: d_redus,
