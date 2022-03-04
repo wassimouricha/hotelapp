@@ -6,7 +6,6 @@ import 'package:hotelapp/main.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
 const d_redus = Color(0xFFFF4A57);
