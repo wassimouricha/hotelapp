@@ -8,6 +8,11 @@ import 'package:hotelapp/hoteru.dart';
 import 'package:hotelapp/biotechnica.dart';
 import 'package:hotelapp/notellmotel.dart';
 
+const d_blue = Color(0xFF136377);
+const d_lightblue = Color(0xFF25E1ED);
+const d_redus = Color(0xFFFF4A57);
+const d_yellow = Color(0xFFfcec0c);
+
 //section hotel
 class hotelSection extends StatelessWidget {
   final List hotelList = [
@@ -243,7 +248,9 @@ class hotelCard extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+              
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
@@ -285,6 +292,30 @@ class hotelCard extends StatelessWidget {
                         fontWeight: FontWeight.w400,
                         color: Colors.grey[500]),
                   ),
+                   SizedBox(
+                    width: 20,
+                  ),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Konpeki();
+                    })); 
+                    
+                  },
+                  style: ElevatedButton.styleFrom(
+                    
+                    primary: d_redus,
+                   
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(FontAwesomeIcons.desktop),
+                     
+                      
+                    ],
+                  )),
                 ],
               ),
             ),

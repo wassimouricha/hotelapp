@@ -236,8 +236,15 @@ class mater extends StatelessWidget {
           }
         },
         color: d_redus,
-        child: Text("Ouvrir Portfolio"),
-      ),
+        child: Text("Ouvrir Portfolio",
+         style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),),
+         shape: StadiumBorder(),
+         padding: EdgeInsets.all(14),),
+      
     );
   }
 }
@@ -257,8 +264,15 @@ class call extends StatelessWidget {
           }
         },
         color: d_redus,
-        child: Text("Appelez"),
-      ),
+        child: Text("Appelez", 
+        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),),
+         shape: StadiumBorder(),
+         padding: EdgeInsets.all(14),),
+    
     );
   }
 }
@@ -278,7 +292,14 @@ class mess extends StatelessWidget {
           }
         },
         color: d_redus,
-        child: Text("Message"),
+        child: Text("Message" , 
+        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),),
+         shape: StadiumBorder(),
+         padding: EdgeInsets.all(14),
       ),
     );
   }
