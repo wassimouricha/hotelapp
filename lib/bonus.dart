@@ -7,7 +7,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 const d_blue = Color(0xFF136377);
 const d_lightblue = Color(0xFF25E1ED);
 const d_redus = Color(0xFFFF4A57);
@@ -59,6 +58,18 @@ class Bonus extends StatelessWidget {
               //car on va avoir plusieurs widget à l'intérieur
               Card(),
               bonuses(),
+              SizedBox(
+                height: 10,
+              ),
+              mater(),
+              SizedBox(
+                height: 10,
+              ),
+              mess(),
+              SizedBox(
+                height: 10,
+              ),
+              call(),
             ],
           ),
         ));
@@ -211,3 +222,65 @@ class Card extends StatelessWidget {
     );
   }
 }
+
+class mater extends StatelessWidget {
+  final String _url = "https://wassimouricha.github.io/Portfolio/";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: MaterialButton(
+        onPressed: () async {
+          //c'est la manière conventionnelle pour qu'un bouton vous redirige vers un lien
+          if (await canLaunch(_url)) {
+            await launch(_url);
+          }
+        },
+        color: d_redus,
+        child: Text("Ouvrir Portfolio"),
+      ),
+    );
+  }
+}
+
+class call extends StatelessWidget {
+  final String _phone = "0695580726";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: MaterialButton(
+        onPressed: () async {
+          //c'est la manière conventionnelle pour qu'un bouton vous redirige vers un lien
+          final _call = "tel:$_phone";
+         
+          if (await canLaunch(_phone)) {
+            await launch(_phone);
+          }
+        },
+        color: d_redus,
+        child: Text("Appelez"),
+      ),
+    );
+  }
+}
+
+class mess extends StatelessWidget {
+  final String _phone = "0695580726";
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: MaterialButton(
+        onPressed: () async {
+          //c'est la manière conventionnelle pour qu'un bouton vous redirige vers un lien
+         
+          final _text = "sms:$_phone";
+          if (await canLaunch(_phone)) {
+            await launch(_phone);
+          }
+        },
+        color: d_redus,
+        child: Text("Message"),
+      ),
+    );
+  }
+}
+
