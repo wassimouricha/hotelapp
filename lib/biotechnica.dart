@@ -4,6 +4,12 @@ import 'package:hotelapp/calendar_page.dart';
 import 'package:hotelapp/konpeki.dart';
 import 'package:hotelapp/delayed_animation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hotelapp/biotechca.dart';
+
+const d_blue = Color(0xFF136377);
+const d_lightblue = Color(0xFF25E1ED);
+const d_redus = Color(0xFFFF4A57);
+const d_yellow = Color(0xFFfcec0c);
 
 //section hotel
 
@@ -154,7 +160,9 @@ class bioCard extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(10, 3, 10, 0),
+              
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
@@ -188,14 +196,42 @@ class bioCard extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
+                  
                   Text(
                     // hotelData['review'].toString() +
+                    
                     " 622 Avis ",
                     style: GoogleFonts.nunito(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey[500]),
                   ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return biopo();
+                    })); 
+                    
+                  },
+                  style: ElevatedButton.styleFrom(
+                    
+                    primary: d_redus,
+                   
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(FontAwesomeIcons.desktop),
+                     
+                      
+                    ],
+                  )),
+                  
                 ],
               ),
             ),
